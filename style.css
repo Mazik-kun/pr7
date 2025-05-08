@@ -1,0 +1,579 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --headcolor--:#3C2828;
+    --sectioncolor--:#ffc5c5;
+    --cardscolor--:#a55e5e;
+    --buttoncolor--:#ffc5c550;
+    --fontcolorLight--:rgb(255, 255, 255);
+    --fontcolorDark--:rgb(0, 0, 0);
+    --fontSize: calc(0.6vw + 0.7vh);
+}
+@font-face { 
+    font-family: "CoolFont"; 
+    src:url("./font/Harlequinade.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+@font-face { 
+    font-family: "Orelega"; 
+    src:url("./font/OrelegaOne-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+html{
+    overflow-x: hidden;
+    display: flex;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+    flex-direction: column;   
+}
+html::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+}
+.borderline{
+    width: fit-content;
+    height:fit-content;
+    padding: 0vh 0.7vw 0vh 1.3vw;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 60px;
+    border-collapse: collapse;
+} 
+.buttonline{
+    width: fit-content;
+    height:fit-content;
+    background-color: var(--buttoncolor--);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 60px;
+    border-collapse: collapse;
+} 
+.header{
+    position: relative;
+    background-color: var(--headcolor--);
+    height: 95vh;
+    min-height: 720px;
+    width: 100vw;
+    font-family: "CoolFont";
+    color: var(--fontcolorLight--);
+    text-align: center;
+    display: block;
+    scroll-snap-align: center;
+    
+}
+.title{
+    font-size: calc(var(--fontSize)*4);
+    justify-self: center;
+}
+.direction, .tickets{
+    font-size: calc(var(--fontSize)*2.5);
+}
+.direction{
+    position: relative;
+    left:3.8vw;
+    bottom: -0.2vh;
+}
+.directiontext{
+    width: 40vw;
+    text-align: left;
+    padding: 0.7vh 1.5vw 0.7vh 2.7vw;
+    position: relative;
+    margin-top:-0.5vh;
+    font-size: calc(var(--fontSize)*1.3);
+}
+.direct{
+    width: fit-content;
+    position: relative;
+    top: 4vh;
+}
+.underdirection{
+    background-color: var(--headcolor--);
+    height: 30%;
+    width: 90%;
+    /* border:1px solid green; */
+    z-index: 10;
+    position: absolute;
+    top:94%;
+}
+.tickets{
+    padding: 0vh 2.7vw 0vh 3vw;
+    position: relative;
+    top:14vh;
+    left:6vw;
+    z-index: 3;
+}
+.tickets a{
+    text-decoration: none;
+    color:var(--fontcolorLight--);
+}
+.phrases{
+    position: absolute;
+    font-size: calc(var(--fontSize)*1.7);
+}
+.artist{
+    background-image: url(./HeadAndFoot/Artist.png);
+    width: calc(var(--fontSize) * 30);
+    height: calc(var(--fontSize) * 42.6);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    left:46vw;
+    top:calc(var(--fontSize) * -15);
+}
+#phrase1{
+    /* border:1px solid green; */
+    width: 30vw;
+    font-size: calc(var(--fontSize)*3.2);
+    top:30vh;
+    left:67vw;
+    rotate: 15deg;
+}
+#phrase2{
+    /* border:1px solid green; */
+    width: 24vw;
+    top:9vh;
+    left:73vw;
+    rotate: -25deg;
+}
+#phrase3{
+    /* border:1px solid green; */
+    width: 24vw;
+    top:63vh;
+    left:74vw;
+    rotate: -15deg;
+}
+#phrase4{
+    /* border:1px solid green; */
+    width: 24vw;
+    top:55vh;
+    left:23vw;
+    rotate: -20deg;
+}
+
+.main1{
+    font-family: "Orelega";
+    position: relative;
+    top:150px;
+    left:5vw;
+    border-radius: 125px;
+    width: 90vw;
+    height: 75vh;
+    background-color: var(--sectioncolor--);
+    color:var(--fontcolorDark--);
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+    
+}
+
+.maintitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    /* border:1px solid black; */
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    font-size: calc(var(--fontSize)*4);
+}
+.trackname{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1.2vh 1vw 1.2vh 1vw;
+    top:5%;
+    width: calc(100% - 61px);
+    font-size: clamp(1.2rem,calc(var(--fontSize)*1.4),2rem);
+}
+.progressbar{
+    position: relative;
+    top:12%;
+    width: 95%;
+    justify-self: center;
+    border-radius: 10px;
+    height: 10px;
+    background:linear-gradient(to right, red 33%,white 33%)
+}
+.albumlisten{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: calc(var(--fontSize)*2.5);
+}
+.albumlisten span{
+    font-size:calc(var(--fontSize)*2);
+}
+.albumlisten p{
+    font-size:calc(var(--fontSize)*2.5);
+}
+.playtrack{
+    /* border:1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 25%;
+}
+.player{
+    /* border:1px solid yellow; */
+    width: 100%;
+    position: relative;
+    top:7%;
+}
+.face{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.coverage{
+    background-image: url(.//albums/album1.png);
+    width: 220px;
+    height: 220px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* border:1px solid red; */
+    z-index: 2;
+}
+.playback{
+    margin-top:30px;
+    margin-left: -20%;
+    background-color: var(--cardscolor--);
+    width: 90%;
+    height: 160px;
+    border-radius: 60px;
+}
+.album-modal, .song-modal {
+    font-family: "Orelega";
+    z-index:100;
+    position: fixed;
+    min-width: 15vw;
+    width: fit-content;
+    top: 40vh;
+    left: 20vw;
+    background: var(--cardscolor--);
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--buttoncolor--);
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.album-item, .song-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    color:var(--fontcolorLight--);
+    border-bottom: 2px solid var(--fontcolorDark--);
+    border-radius: 20px;
+    transition: 0.7s;
+}
+
+.album-item:hover, .song-item:hover {
+    background: var(--buttoncolor--);
+    color:var(--fontcolorDark--);
+}
+
+.progressbar {
+    height: 5px;
+    background: whitesmoke;
+    position: relative;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.progress-filled {
+    position: absolute;
+    height: 100%;
+    background: red;
+    transition: width 0.1s linear;
+}
+.modal-back, .modal-close {
+    font-family: "Orelega";
+    position: absolute;
+    top: 5px;
+    padding: 5px 10px;
+    border: none;
+    background: var(--headcolor--);
+    color:var(--fontcolorLight--);
+    transition: 0.7s;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.modal-back {
+    left: 10px;
+}
+
+.modal-close {
+    right: 10px;
+}
+
+.modal-back:hover, .modal-close:hover {
+    background: var(--buttoncolor--);
+    color:var(--fontcolorDark--);
+}
+.album-icon {
+    width: calc(var(--fontSize)*2.5);
+    height: calc(var(--fontSize)*2.5);
+    object-fit: cover;
+}
+#change{
+    background-image: url(.//controllers/change.png);
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    /* border:1px solid red; */
+}
+.buttons{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top:10%;
+    left:22.5%;
+    width:calc(85% - 60px);
+}
+#previous{
+    background-image: url(.//controllers/arrows.png);
+    width: 80px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+}
+#next{
+    background-image: url(.//controllers/arrows.png);
+    width: 80px;
+    height: 60px;
+    rotate: 180deg;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+}
+#stop{
+    background-image: url(.//controllers/play.png);
+    width: 55px;
+    height: 55px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-color: transparent;
+    border: none;
+}
+.topname{
+    position: relative;
+    top:7%;
+    left:22.5%;
+    /* border:1px solid black; */
+    width: calc(85% - 60px);
+    height:50%;
+}
+.box1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.albumabout{
+    /* border:1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 44%;
+}
+.albumabout span{
+    font-size:clamp(1rem,calc(var(--fontSize)*2),1.6rem);
+}
+.albumabout p{
+    font-size:clamp(1rem,calc(var(--fontSize)*2),1.6rem);
+}
+.biggie{
+    justify-self: center;
+    display: flex;
+    width: 92%;
+    justify-content: space-between;
+}
+
+.main2{
+    font-family: "Orelega";
+    position: relative;
+    top:250px;
+    left:5vw;
+    border-radius: 125px;
+    width: 90vw;
+    height: 75vh;
+    background-color: var(--sectioncolor--);
+    color:var(--fontcolorDark--);
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+    
+}
+.cards{
+    height: 64%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.eventcard{
+    background-color: var(--cardscolor--);
+    border-radius:60px;
+    height: 100%;
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.eventcard span{
+    width: 100%;
+    text-align: center;
+    font-size:calc(var(--fontSize)*2);
+}
+.buy{
+    font-size:calc(var(--fontSize)*2.5);
+    padding: 2vh 3vw 2vh 3vw;
+}
+.main3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    font-family: "Orelega";
+    position: relative;
+    top:350px;
+    left:5vw;
+    border-radius: 125px;
+    width: 90vw;
+    height: 75vh;
+    background-color: var(--sectioncolor--);
+    color:var(--fontcolorDark--);
+    scroll-snap-align: center; 
+    scroll-snap-stop: normal;
+}
+.shop{
+    display: flex;
+    height: 70%;
+    width: 80%;
+    align-content: center;
+    align-items: center;
+}
+.shoplist{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3.5%;
+    height: 100%;
+    width: 100%;
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    pointer-events: all;
+}
+#s1{
+    background-image: url(./items/item1.png);
+}
+#s2{
+    background-image: url(./items/item2.png);
+}
+#s3{
+    background-image: url(./items/item3.png);
+}
+#s4{
+    background-image: url(./items/item4.png);
+}
+#s5{
+    background-image: url(./items/item5.png);
+}
+.shopcard{
+    height: 99%;
+    width: 30%;
+    flex-shrink: 0;
+    border-radius: 60px;
+    background-position: center;
+    background-color: var(--cardscolor--);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    scroll-snap-align: start;
+}
+.shoplist::-webkit-scrollbar {
+    height: 0px;
+}
+#shopprevious{
+    background-image: url(.//controllers/shopnext.png);
+    width: 80px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-color: transparent;
+    border: none;
+    rotate: 180deg;
+    z-index:10;
+    pointer-events: all;
+}
+#shopnext{
+    background-image: url(.//controllers/shopnext.png);
+    width: 80px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-color: transparent;
+    border: none;
+    z-index:10;
+    pointer-events: all;
+}
+.footer{
+    position: relative;
+    top:50vh;
+    background-color: var(--headcolor--);
+    height: 95vh;
+    min-height: 400px;
+    width: 100vw;
+    font-family: "CoolFont";
+    color: var(--fontcolorLight--);
+    text-align: center;
+    display: block;
+    font-size: calc(var(--fontSize)*2);
+    scroll-snap-align: center;
+    align-content: center;
+}
+.learnabout{
+    justify-self: center;
+    width: 90vw;
+    height: 15vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.learnabout :nth-child(1){
+    background-image: url(./HeadAndFoot/download1.png);
+    width: clamp(200px,30%,500px);
+    height: clamp(100px,100%,354px);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.learnabout :nth-child(2){
+    background-image: url(./HeadAndFoot/download2.png);
+    width: clamp(200px,30%,500px);
+    height: clamp(100px,100%,354px);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.foottext {
+    width: 90vw;
+    justify-self: center;
+    text-align: left;
+}
+
