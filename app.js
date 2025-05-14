@@ -33,7 +33,7 @@ let slidiki = {
         slide7: 
         { count: 7, 
         photo: "items/item7.png", 
-        name: "пщугхп" 
+        name: "Фотография из детства" 
         }
 };
 
@@ -63,11 +63,14 @@ function shop(direction) {
     let supaminus = Math.abs((scrollcount + 4) % scrollers) + 1
     let supaplus = (scrollcount + 1) % scrollers + 1;
     const parent = document.querySelector(".shoplist");
+    let currentname = 0
     if (direction === -1) {
-        parent.insertAdjacentHTML("afterbegin", `<div class="shopcard" data-count="${supaminus}"></div>`);
+        currentname = eval(`slidiki.slide${supaminus}.name`)
+        parent.insertAdjacentHTML("afterbegin", `<div class="shopcard" data-count="${supaminus}"><div class="name">${currentname}</div></div>`);
         parent.querySelector(".shoplist :nth-child(6)").remove();
     } else if (direction === 1) {
-        parent.insertAdjacentHTML("beforeend", `<div class="shopcard" data-count="${supaplus}"></div>`);
+        currentname = eval(`slidiki.slide${supaplus}.name`)
+        parent.insertAdjacentHTML("beforeend", `<div class="shopcard" data-count="${supaplus}"><div class="name">${currentname}</div></div>`);
         parent.querySelector(".shoplist :nth-child(1)").remove();
     }
 

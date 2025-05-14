@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --headcolor--:#3C2828;
+    --sectioncolor--:#ffc5c5;
+    --cardscolor--:#a55e5e;
+    --buttoncolor--:#ffc5c550;
+    --fontcolorLight--:rgb(255, 255, 255);
+    --fontcolorDark--:rgb(0, 0, 0);
+    --fontSize: calc(0.6vw + 0.7vh);
+}
+@font-face { 
+    font-family: "CoolFont"; 
+    src:url("./font/Harlequinade.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+@font-face { 
+    font-family: "Orelega"; 
+    src:url("./font/OrelegaOne-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+body{
+    background-color: var(--sectioncolor--);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.headtag{
+    font-family: "CoolFont";
+    font-size: calc(var(--fontSize)*2.5);
+    margin-bottom: calc(var(--fontSize)*3);
+}
+.abzac{
+    width: 75vw;
+    font-family: "Orelega";
+    color:var(--headcolor--);
+}
+.headabz{
+    font-size: calc(var(--fontSize)*2.3);
+    margin-bottom: calc(var(--fontSize)*1);
+}
+.textabz{
+    font-size: calc(var(--fontSize)*1.3);
+    margin-bottom: calc(var(--fontSize)*2);
+}
